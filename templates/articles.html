@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ title_article_view }}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://www.youtube.com/watch?v=jIQ6UV2onyI">
+            <img src="https://i.imgur.com/xCs547x.jpeg" width="112" height="28">
+        </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            <a href="/artykuly/list/" class="navbar-item">
+                {{ title_article_view }}
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=_yqSbnbUsj4" target="_blank" class="navbar-item">
+                Bardzo ważny film
+            </a>
+        </div>
+    </div>
+</nav>
+<section class="section">
+    <div class="container is-fluid">
+        <div class="notification is-primary">
+            To jest mój blog o <strong>kotach</strong>: umarłabym za każdego kota, którego spotykam na ulicy. 
+        </div>
+
+        <!-- Articles-->
+        {% for art in articles %}
+        <div class="card box">
+            <div class="card-content">
+                <h4 class="title is-4">{{ art.title }}</h4>
+                <div class="content">
+                    {{ art.content }}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <!-- End Articles-->
+
+    </div>
+</section>
+</body>
+</html>
